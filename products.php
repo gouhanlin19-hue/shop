@@ -78,6 +78,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <div class="product-card">
                 <h2><?php echo htmlspecialchars($product['name']); ?></h2>
                 <p class="price">$<?php echo htmlspecialchars($product['price']); ?></p>
+                <img src="images/<?php echo htmlspecialchars($product['image']); ?>" width="200">
                 <p><?php echo htmlspecialchars($product['description']); ?></p>
                 <p>
                     <strong>Seller:</strong>
