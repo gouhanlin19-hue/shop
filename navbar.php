@@ -18,7 +18,7 @@ if (session_status() === PHP_SESSION_NONE) {
         <?php if (isset($_SESSION["username"])): ?>
             <span class="nav-user">
                 <?php echo htmlspecialchars($_SESSION["username"]); ?>
-                (<?php echo htmlspecialchars($_SESSION["role"]); ?>)
+                
             </span>
             <a href="logout.php">Logout</a>
         <?php else: ?>

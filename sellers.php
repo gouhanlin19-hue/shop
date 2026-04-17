@@ -2,6 +2,11 @@
 session_start();
 include(__DIR__ . "/config/db.php");
 
+//logout, click on previous in browser still let us logged out
+header("Cache-Control: no-store, no-cache, must-revalidate");
+header("Pragma: no-cache");
+header("Expires: 0");
+
 // Fetch all sellers
 $sql = "
 SELECT s.*, COUNT(p.id) AS product_count

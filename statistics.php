@@ -2,6 +2,11 @@
 session_start();
 include(__DIR__ . "/config/db.php");
 
+//logout, click on previous in browser still let us logged out
+header("Cache-Control: no-store, no-cache, must-revalidate");
+header("Pragma: no-cache");
+header("Expires: 0");
+
 // 1. Total number of products
 $totalProductsSql = "SELECT COUNT(*) AS total_products FROM products";
 $totalProductsStmt = $conn->query($totalProductsSql);

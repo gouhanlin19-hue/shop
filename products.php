@@ -2,6 +2,11 @@
 session_start();
 include(__DIR__ . "/config/db.php");
 
+//logout, click on previous in browser still let us logged out
+header("Cache-Control: no-store, no-cache, must-revalidate");
+header("Pragma: no-cache");
+header("Expires: 0");
+
 // Pagination
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 if ($page < 1) $page = 1;
